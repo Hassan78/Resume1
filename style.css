@@ -1,0 +1,404 @@
+* {
+  /* border: 2px solid blueviolet; */
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+
+  overflow-y: auto;
+}
+body {
+  background: #fff;
+}
+.p-row a {
+  color: orangered !important;
+}
+.dropdown {
+  position: fixed;
+  margin: 20px;
+  z-index: 999;
+  display: none;
+}
+
+.nav {
+  position: fixed;
+  z-index: 3;
+  left: 40%;
+  background-color: rgb(19, 18, 18);
+  padding: 10px;
+}
+.dropdown:hover .dropdown-menu .dropdown-item {
+  display: block !important;
+}
+@media (max-width: 572px) {
+  .dropdown {
+    display: inline;
+  }
+  .dropdown-item:hover {
+    background: orangered;
+    opacity: 0.9;
+  }
+
+  .nav {
+    all: unset;
+    left: 10%;
+    display: none;
+    text-decoration: #4d4545;
+  }
+}
+
+.landing-page-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.landing-page-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("images/landImage.jpg");
+  background-size: cover;
+
+  animation: anim 25s linear infinite;
+}
+@keyframes anim {
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.landing-page-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  padding-bottom: 60px;
+}
+.landing-page-content h1 {
+  color: orangered;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 20px;
+}
+.landing-page-content p {
+  font-size: 24px;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+.landing-page-content a {
+  border: 1px solid orangered;
+  padding: 15px;
+  font-size: 20px;
+  color: white;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.landing-page-content a:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: orangered;
+}
+.started {
+  padding-top: 60px;
+}
+/* end of landing page css */
+.about-container {
+  background-color: black;
+  width: 100%;
+  height: -webkit-fill-available;
+}
+
+.about-row {
+  width: 100%;
+  box-sizing: border-box;
+}
+.pp-side {
+  width: 50%;
+  float: left;
+  padding: 20px;
+}
+.card {
+  left: 6%;
+  padding: 20px;
+  position: relative;
+}
+
+.p-info-side {
+  width: 50%;
+  margin-top: 60px;
+  float: right;
+
+  text-align: justify;
+  padding: 20px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: white;
+}
+.p-info-side::before {
+  content: "";
+  height: 50vh;
+  width: 1px;
+  position: absolute;
+  right: 55%;
+  top: 105%;
+  background: orangered;
+}
+@media (max-width: 797px) {
+  .about-container {
+    background-color: black;
+    padding: 0;
+    margin: 0;
+  }
+  .p-info-side::before {
+    display: none;
+  }
+  .pp-side {
+    width: 100%;
+    padding-left: 10em;
+
+    display: block;
+  }
+  .p-info-side {
+    width: 100%;
+    display: block;
+    background-color: black;
+  }
+}
+@media (max-width: 500px) {
+  .pp-side {
+    padding: 0;
+  }
+}
+/* End of about page --
+--------------------------
+-------------------------- */
+
+.resume-container {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  padding-bottom: 72px;
+  padding-top: 90px;
+}
+
+.resume-title {
+  width: 100%;
+  margin-left: 50%;
+  margin-bottom: 50px;
+}
+.resume-title h1 {
+  text-align: center;
+  display: inline;
+  border: 2px solid orangered;
+  padding: 10px;
+}
+.resume-title h1:hover {
+  border: 2px solid green;
+}
+
+.blue-bg {
+  background-color: #4d4545;
+  color: #ed8d8d;
+  height: 100%;
+}
+
+.circle {
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 50%;
+  background-color: #ed8d8d;
+  color: #4d4545;
+  max-height: 50px;
+  z-index: 2;
+}
+
+.how-it-works.row {
+  display: flex;
+}
+.how-it-works.row .col-2 {
+  display: inline-flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+}
+.how-it-works.row .col-2::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #ed8d8d;
+  z-index: 1;
+}
+.how-it-works.row .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+.how-it-works.row .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 3px);
+}
+.how-it-works.row .col-2.top::after {
+  height: 50%;
+  left: 50%;
+  top: 0;
+}
+
+.timeline div {
+  padding: 0;
+  height: 40px;
+}
+.timeline hr {
+  border-top: 3px solid #ed8d8d;
+  margin: 0;
+  top: 17px;
+  position: relative;
+}
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
+}
+.timeline .corner {
+  border: 3px solid #ed8d8d;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -50%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 3px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -50%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+}
+.edu-dateLine1::before {
+  content: "August 2013 - May 2016";
+  margin-right: 10px;
+  background-color: #ed8d8d;
+  color: white;
+}
+.edu-dateLine2::before {
+  content: "2016-2017";
+  margin-right: 10px;
+  background-color: #ed8d8d;
+  color: white;
+}
+.edu-dateLine3::before {
+  content: "March 2019 - May 2019";
+  margin-right: 10px;
+  background-color: #ed8d8d;
+  color: white;
+}
+.emp-dateLine1::before {
+  content: "March 2016 - May 2016";
+  margin-right: 10px;
+  background-color: #ed8d8d;
+  color: white;
+}
+.pb-3 {
+  color: white;
+}
+/* End of Resume */
+.portfolio-title {
+  width: 40%;
+  margin-left: 30%;
+  margin-bottom: 50px;
+}
+.portfolio-title h1 {
+  text-align: center;
+  border: 2px solid orangered;
+  padding: 10px;
+}
+.portfolio-title :hover {
+  border: 2px solid green;
+}
+.p-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  object-fit: cover;
+  margin: 20px;
+  background: #552525;
+  opacity: 0.8;
+}
+
+.p-card {
+  border-radius: 10px;
+  margin: 20px 1.6%;
+  overflow: hidden;
+  position: relative;
+  width: 30%;
+  cursor: pointer;
+}
+.p-card:hover {
+  border: 2px dotted orangered;
+}
+.portfolio-title h1::before {
+  content: "Some of My Works";
+}
+@media (max-width: 723px) {
+  .resume-title {
+    margin-left: 10px;
+  }
+  .portfolio-title {
+    margin-left: 10px;
+  }
+  .portfolio-title h1::before {
+    content: "";
+  }
+  .portfolio-title h1::after {
+    content: "Projects";
+  }
+}
+/* End Portfolio */
+
+.social-container {
+  width: 100%;
+  margin: 0;
+  height: auto;
+  background: #4d4545;
+  font-size: 30px;
+  color: white;
+}
+.row {
+  margin: 0;
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+  display: inline;
+  padding: 20px;
+}
+.social a {
+  color: white;
+}
+.chevron {
+  width: 100%;
+}
+
+.copyright {
+  font-size: 12px;
+  text-align: center;
+}
